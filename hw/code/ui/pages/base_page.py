@@ -8,6 +8,7 @@ DEFAULT_TIMER_LENGTH = 5
 class PageNotOpenedExeption(Exception):
     pass
 
+
 class BasePage(object):
     url = 'https://ads.vk.com/'
 
@@ -32,3 +33,11 @@ class BasePage(object):
         self.find(locator, timeout=timeout)
         elem = self.wait(timeout).until(EC.element_to_be_clickable(locator))
         elem.click()
+
+    def find_all(self, locator, timeout=None):
+        return self.wait(timeout).until(EC.presence_of_all_elements_located(locator))
+
+    def input(self, input_field, data):
+        elem = self.find(input_field)
+        elem.clear()
+        elem.send_keys(data)
