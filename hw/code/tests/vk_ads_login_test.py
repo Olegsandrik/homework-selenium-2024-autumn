@@ -10,18 +10,8 @@ from dotenv import load_dotenv
 from hw.code.ui.pages.base_page import BasePage
 from hw.code.ui.pages.main_page import MainPage
 from hw.code.ui.pages.login_page import LoginPage
+from hw.code.tests.base_case import BaseCase
 load_dotenv()
-
-
-class BaseCase:
-    authorize = True
-
-    @pytest.fixture(scope='function', autouse=True)
-    def setup(self, driver, config, request: FixtureRequest):
-        self.driver = driver
-        self.config = config
-
-        self.login_page = LoginPage(driver)
 
 
 @pytest.fixture(scope='session')
