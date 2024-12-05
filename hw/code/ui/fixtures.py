@@ -1,10 +1,11 @@
+import os
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
-from hw.code.ui.pages.base_page import BasePage
+from  ui.pages.base_page import BasePage
 
 
 @pytest.fixture()
@@ -58,3 +59,10 @@ def all_drivers(config, request):
 @pytest.fixture
 def base_page(driver):
     return BasePage(driver=driver)
+
+@pytest.fixture(scope='session')
+def credentials():
+    return {
+        'user': os.getenv('LOGIN'),
+        'password': os.getenv('PASSWORD')
+    }

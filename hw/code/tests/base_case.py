@@ -1,16 +1,19 @@
 import pytest
 from contextlib import contextmanager
 from _pytest.fixtures import FixtureRequest
-from hw.code.ui.pages.main_page import MainPage
-from hw.code.ui.pages.login_page import LoginPage
+from  ui.pages.main_page import MainPage
+from  ui.pages.login_page import LoginPage
 
 
 class BaseCase:
     authorize = True
 
     @pytest.fixture(scope='function', autouse=True)
-    def setup(self, driver, config, request: FixtureRequest):
+    def setup(self, driver, config, request: FixtureRequest, credentials):
         self.driver = driver
         self.config = config
 
-        self.login_page = LoginPage(driver)
+        if self.authorize:
+            main_page = MainPage(self.driver)
+            login_page = main_page.open_cabinet()
+            self.overview_page = login_page.login(credentials)
