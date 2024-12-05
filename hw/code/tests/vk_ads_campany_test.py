@@ -137,7 +137,6 @@ class TestCampany(BaseCase):
         )
         time.sleep(3)
 
-    # Смог проверить на запуске до сюда
     def test_campany_filtr_new_status_moder_dir(self, credentials):
         campany_page = CampanyPage(self.driver)
         campany_page.open_page()
