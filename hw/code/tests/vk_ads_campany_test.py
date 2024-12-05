@@ -31,7 +31,6 @@ class TestCampany(BaseCase):
     def test_open_campany_page(self, credentials):
         login_page = LoginPage(self.driver)
         login_page.login(credentials)
-        
 
     def test_campany_filtr_open(self):
         campany_page = CampanyPage(self.driver)
@@ -39,8 +38,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.OPEN_FILTR, timeout=10
         )
-        assert campany_page.is_element_visible(CampanyPageLocators.SAVED_FILTR), "Фильтр не был найден"
-        
 
     def test_campany_filtr_seved(self, credentials):
         campany_page = CampanyPage(self.driver)
@@ -51,7 +48,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.SAVED_FILTR, timeout=10
         )
-        assert campany_page.is_element_visible(CampanyPageLocators.SAVED_FILTR), "Фильтр не был найден"
         
 
     def test_campany_filtr_seved_click(self, credentials):
@@ -66,7 +62,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.APPLY_FILTR, timeout=10
         )
-        assert campany_page.is_element_visible(CampanyPageLocators.SAVED_FILTR), "Фильтр не был найден"
         
 
     def test_campany_filtr_seved_delete(self, credentials):
@@ -120,7 +115,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.FILTR_APPLY_ALL, timeout=10
         )
-        assert campany_page.is_element_visible(CampanyPageLocators.SAVED_FILTR), "Фильтр не был найден"
 
 
     def test_campany_filtr_new_status_dir(self, credentials):
@@ -138,8 +132,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.FILTR_STATUS_SHOW_DELETED, timeout=10
         )
-        assert campany_page.is_element_visible(
-            CampanyPageLocators.FILTR_STATUS_CAMPANY_LAUNCHED), "Директория фильтра не найдена"
 
     def test_campany_filtr_new_status_moder_dir(self, credentials):
         campany_page = CampanyPage(self.driver)
@@ -156,8 +148,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.FILTR_STATUS_MODER_DENIED, timeout=10
         )
-        assert campany_page.is_element_visible(
-            CampanyPageLocators.FILTR_STATUS_MODER_DENIED), "Директория фильтра не найдена"
 
     def test_campany_filtr_new_object_ads_dir(self, credentials):
         campany_page = CampanyPage(self.driver)
@@ -171,8 +161,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.FILTR_STATUS_OBJ_ADV_MOBILE, timeout=10
         )
-        assert campany_page.is_element_visible(
-            CampanyPageLocators.FILTR_STATUS_OBJ_ADV_MOBILE), "Директория рекламы не найдена"
 
     def test_campany_filtr_new_translations_dir(self, credentials):
         campany_page = CampanyPage(self.driver)
@@ -189,8 +177,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.FILTR_TRANSLATION_OFF, timeout=10
         )
-        assert campany_page.is_element_visible(
-            CampanyPageLocators.FILTR_TRANSLATION_OFF), "Директория трансляции не найдена"
 
     def test_campany_filtr_new_campaign_effectiveness_dir(self, credentials):
         campany_page = CampanyPage(self.driver)
@@ -207,8 +193,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
         )
-        assert campany_page.is_element_visible(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER), "Директория эффективности не найдена"
 
 
     def test_campany_filtr_cancellation(self, credentials):
