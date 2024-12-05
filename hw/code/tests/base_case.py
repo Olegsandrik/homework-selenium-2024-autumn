@@ -1,8 +1,8 @@
 import pytest
 from contextlib import contextmanager
 from _pytest.fixtures import FixtureRequest
-from  ui.pages.main_page import MainPage
-from  ui.pages.login_page import LoginPage
+from ui.pages.main_page import MainPage
+from ui.pages.login_page import LoginPage
 
 
 class BaseCase:

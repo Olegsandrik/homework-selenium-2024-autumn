@@ -1,7 +1,7 @@
-from  ui.pages.login_page import LoginPage
-from  ui.pages.base_page import BasePage
-from  ui.locators.main_locators import MainPageLocators
-from  ui.url.urls import Urls
+from ui.url.urls import Urls
+from ui.pages.login_page import LoginPage
+from ui.pages.base_page import BasePage
+from ui.locators.main_locators import MainPageLocators
 
 class MainPage(BasePage):
     url = Urls.main_page

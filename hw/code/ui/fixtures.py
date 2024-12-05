@@ -5,10 +5,10 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
-from  ui.pages.base_page import BasePage
+from ui.pages.base_page import BasePage
 
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def driver(config):
     browser = config['browser']
     url = config['url']

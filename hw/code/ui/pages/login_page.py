@@ -5,6 +5,9 @@ from ui.pages.overview_page import OverviewPage
 from ui.pages.base_page import BasePage
 from ui.locators.login_locators import LoginPageLocators
 from ui.url.urls import Urls
+from selenium.webdriver.common.by import By
+from ui.locators.main_locators import MainPageLocators
+from ui.url.urls import MainPageUrls
 
 
 class LoginPage(BasePage):
@@ -20,6 +23,7 @@ class LoginPage(BasePage):
         )
 
         time.sleep(2)
+
         self.click(self.locators.SUBMIT, 15)
 
         self.click(self.locators.CHOOSE_AUTH_METHOD, 15)

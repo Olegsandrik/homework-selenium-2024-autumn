@@ -6,3 +6,7 @@ class Urls:
     setting_page = "https://ads.vk.com/hq/settings"
     notifications_settings_page = "https://ads.vk.com/hq/settings/notifications"
     access_settings_page = "https://ads.vk.com/hq/settings/access"
+
+class MainPageUrls:
+    MainPage = "https://ads.vk.com/"
+
