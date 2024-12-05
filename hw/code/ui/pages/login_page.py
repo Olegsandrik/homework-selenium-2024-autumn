@@ -22,8 +22,6 @@ class LoginPage(BasePage):
             30
         )
 
-        time.sleep(2)
-
         self.click(self.locators.SUBMIT, 15)
 
         self.click(self.locators.CHOOSE_AUTH_METHOD, 15)

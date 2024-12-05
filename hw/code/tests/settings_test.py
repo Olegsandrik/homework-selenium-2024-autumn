@@ -17,7 +17,6 @@ class TestMainSettings(BaseCase):
         new_phone = '+7' + ''.join(initial_phone_digits)
         settings_page.change_phone(new_phone)
         assert settings_page.get_phone() == new_phone
-        time.sleep(1)
         settings_page.change_phone(initial_phone)
         assert settings_page.get_phone() == initial_phone
 
@@ -37,7 +36,6 @@ class TestMainSettings(BaseCase):
         random.shuffle(initial_phone_digits)
         new_phone = '+7' + ''.join(initial_phone_digits)
         settings_page.input_phone_number(new_phone)
-        time.sleep(1)
         settings_page.cancel_changes()
         assert settings_page.get_phone() == initial_phone
 
