@@ -1,3 +1,4 @@
+import os
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -58,3 +59,10 @@ def all_drivers(config, request):
 @pytest.fixture
 def base_page(driver):
     return BasePage(driver=driver)
+
+@pytest.fixture(scope='session')
+def credentials():
+    return {
+        'user': os.getenv('LOGIN'),
+        'password': os.getenv('PASSWORD')
+    }

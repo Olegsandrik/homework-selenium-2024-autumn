@@ -1,40 +1,36 @@
 import time
 
-from selenium.webdriver.common.by import By
+from ui.pages.settings_page import MainSettingsPage
+from ui.pages.overview_page import OverviewPage
 from ui.pages.base_page import BasePage
+from ui.locators.login_locators import LoginPageLocators
+from ui.url.urls import Urls
+from selenium.webdriver.common.by import By
 from ui.locators.main_locators import MainPageLocators
-from ui.locators.main_locators import LoginPageLocators
 from ui.url.urls import MainPageUrls
 
 
 class LoginPage(BasePage):
 
-    url = MainPageUrls.MainPage
+    url = Urls.login_page
+    locators = LoginPageLocators()
 
     def login(self, credentials):
-        self.driver.maximize_window()
-        self.click(
-            MainPageLocators.OPEN_CABINET, timeout=10
-        )
-        time.sleep(2)
         self.input(
-            LoginPageLocators.INPUT_PHONE,
+            self.locators.INPUT_LOGIN,
             credentials.get('user', ''),
+            30
         )
+
         time.sleep(2)
-        self.click(
-            LoginPageLocators.SUBMIT_PHONE
-        )
-        time.sleep(15) # это для двухфакторки
-        self.input(
-            LoginPageLocators.INPUT_PASSWORD,
-            credentials.get('password', ''),
-        )
-        time.sleep(2)
-        self.click(
-            LoginPageLocators.SUBMIT_PASSWORD
-        )
-        time.sleep(10) # капча
-        self.click(
-            LoginPageLocators.COUNTIUE_LOGIN
-        )
+
+        self.click(self.locators.SUBMIT, 15)
+
+        self.click(self.locators.CHOOSE_AUTH_METHOD, 15)
+        self.click(self.locators.USE_PASSWORD_AUTH, 10)
+
+        self.input(self.locators.INPUT_PASSWORD, credentials.get('password', ''), 30)
+        self.click(self.locators.SUBMIT, 10)
+        self.click(self.locators.ORGANIZATION_ITEM, 15)
+
+        return OverviewPage(self.driver, MainSettingsPage)

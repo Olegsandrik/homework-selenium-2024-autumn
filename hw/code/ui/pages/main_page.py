@@ -1,13 +1,13 @@
+from ui.url.urls import Urls
 from ui.pages.login_page import LoginPage
 from ui.pages.base_page import BasePage
 from ui.locators.main_locators import MainPageLocators
-from ui.url.urls import MainPageUrls
 
 class MainPage(BasePage):
-    url = MainPageUrls.MainPage
+    url = Urls.main_page
 
     locators = MainPageLocators()
 
     def open_cabinet(self):
-        self.click(self.locators.OPEN_CABINET)
+        self.click(self.locators.OPEN_CABINET, 20)
         return LoginPage(self.driver)

@@ -1,7 +1,7 @@
+from dotenv import load_dotenv
 import json
 import os
 import time
-
 import pytest
 from _pytest.fixtures import FixtureRequest
 from selenium.webdriver.common.by import By
@@ -15,16 +15,13 @@ from tests.base_case import BaseCase
 load_dotenv()
 
 
-@pytest.fixture(scope='session')
-def credentials():
-    return {
-        'user': os.getenv('LOGIN'),
-        'password': os.getenv('PASSWORD')
-    }
+load_dotenv()
 
-
+@pytest.mark.skip('skip')
 class TestLogin(BaseCase):
+    def test_login(self):
+        print(self.driver.current_url)
+
     def _test_login(self, credentials):
         login_page = LoginPage(self.driver)
         login_page.login(credentials)
-
