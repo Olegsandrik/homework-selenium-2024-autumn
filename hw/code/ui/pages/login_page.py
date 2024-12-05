@@ -1,9 +1,10 @@
 import time
 
-from hw.code.ui.pages.base_page import BasePage
-from hw.code.ui.locators.main_locators import MainPageLocators
-from hw.code.ui.locators.main_locators import LoginPageLocators
-from hw.code.ui.url.urls import MainPageUrls
+from selenium.webdriver.common.by import By
+from ui.pages.base_page import BasePage
+from ui.locators.main_locators import MainPageLocators
+from ui.locators.main_locators import LoginPageLocators
+from ui.url.urls import MainPageUrls
 
 
 class LoginPage(BasePage):
@@ -33,8 +34,7 @@ class LoginPage(BasePage):
         self.click(
             LoginPageLocators.SUBMIT_PASSWORD
         )
-        time.sleep(2)
+        time.sleep(10) # капча
         self.click(
             LoginPageLocators.COUNTIUE_LOGIN
         )
-        time.sleep(20)

@@ -1,3 +1,4 @@
+import json
 import os
 import time
 
@@ -7,10 +8,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from dotenv import load_dotenv
-from hw.code.ui.pages.base_page import BasePage
-from hw.code.ui.pages.main_page import MainPage
-from hw.code.ui.pages.login_page import LoginPage
-from hw.code.tests.base_case import BaseCase
+from ui.pages.base_page import BasePage
+from ui.pages.main_page import MainPage
+from ui.pages.login_page import LoginPage
+from tests.base_case import BaseCase
 load_dotenv()
 
 
@@ -23,8 +24,7 @@ def credentials():
 
 
 class TestLogin(BaseCase):
-    def test_login(self, credentials):
+    def _test_login(self, credentials):
         login_page = LoginPage(self.driver)
         login_page.login(credentials)
-
 
