@@ -1,7 +1,7 @@
-from hw.code.ui.pages.login_page import LoginPage
-from hw.code.ui.pages.base_page import BasePage
-from hw.code.ui.locators.main_locators import MainPageLocators
-from hw.code.ui.url.urls import MainPageUrls
+from ui.pages.login_page import LoginPage
+from ui.pages.base_page import BasePage
+from ui.locators.main_locators import MainPageLocators
+from ui.url.urls import MainPageUrls
 
 class MainPage(BasePage):
     url = MainPageUrls.MainPage
