@@ -32,6 +32,28 @@ class TestCampany(BaseCase):
         login_page = LoginPage(self.driver)
         login_page.login(credentials)
 
+    def test_campany_create_new_campany(self, credentials):
+        campany_page = CampanyPage(self.driver)
+        campany_page.open_page()
+        campany_page.click(
+            CampanyPageLocators.OPEN_CREATION_NEW_CAMPANY
+        )
+        campany_page.click(
+            CampanyPageLocators.CHANGE_NAME_CAMPANY
+        )
+        campany_page.input(
+            CampanyPageLocators.INPUT_NEW_NAME,
+            "test",
+        )
+        campany_page.click(
+            CampanyPageLocators.CHOOSE_SOCIETY
+        )
+        campany_page.click(
+            CampanyPageLocators.DROPDOWN_ADVS_OBJECT
+        )
+
+    '''
+
     def test_campany_filtr_open(self):
         campany_page = CampanyPage(self.driver)
         campany_page.open_page()
@@ -421,4 +443,4 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.FILTR_REMOVE, timeout=10
         )
-       
+       '''

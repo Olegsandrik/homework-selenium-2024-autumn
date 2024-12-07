@@ -33,3 +33,8 @@ class CampanyPageLocators:
     FILTR_SAVE_INPUT = (By.XPATH, "//input[@class='vkuiTypography vkuiInput__el vkuiText vkuiText--sizeY-none' and @type='text']")
     FILTR_SAVE_CONFIRM = (By.XPATH, "//span[@class='vkuiButton__in']//span[@class='vkuiButton__content' and text()='Сохранить']")
     FILTR_REMOVE = (By.XPATH, "//button[@type='button' and @aria-label='Удалить ' and contains(@class, 'vkuiChip__remove')]")
+    OPEN_CREATION_NEW_CAMPANY = (By.XPATH, "//span[text()='Создать']")
+    CHOOSE_SOCIETY = (By.XPATH, "//span[text()='Сообщество и профиль']")
+    DROPDOWN_ADVS_OBJECT = (By.XPATH, "//input[@data-testid='vk-owner-selector']")
+    CHANGE_NAME_CAMPANY = (By.XPATH, "//h2[text()='Кампания 2024-12-07']")
+    INPUT_NEW_NAME = (By.CLASS_NAME, 'EditableTitle_inputContainer')
