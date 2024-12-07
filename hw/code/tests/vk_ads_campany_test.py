@@ -35,412 +35,154 @@ class TestCampany(BaseCase):
     def test_campany_create_new_campany(self, credentials):
         campany_page = CampanyPage(self.driver)
         campany_page.open_page()
+
         campany_page.click(
             CampanyPageLocators.OPEN_CREATION_NEW_CAMPANY
         )
+
         campany_page.click(
             CampanyPageLocators.CHANGE_NAME_CAMPANY
         )
-        campany_page.input(
-            CampanyPageLocators.INPUT_NEW_NAME,
-            "test",
-        )
+        
         campany_page.click(
             CampanyPageLocators.CHOOSE_SOCIETY
         )
+
         campany_page.click(
             CampanyPageLocators.DROPDOWN_ADVS_OBJECT
         )
 
-    '''
-
-    def test_campany_filtr_open(self):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
         campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
+            CampanyPageLocators.INPUT_DESCRIPTION_APP
         )
 
-    def test_campany_filtr_seved(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.SAVED_FILTR, timeout=10
-        )
-        
-
-    def test_campany_filtr_seved_click(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.SAVED_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.APPLY_FILTR, timeout=10
-        )
-        
-
-    def test_campany_filtr_seved_delete(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.SAVED_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.DELETE_FILTR, timeout=10
-        )
-        
-
-    def test_campany_filtr_new_delete_all(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_LAUNCHED, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_DELETE_ALL_APPLY, timeout=10
-        )
-        
-
-    def test_campany_filtr_new_delete_current_dir(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_LAUNCHED, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_DELETE_CURR_DIR_APPLY, timeout=10
-        )
-        
-
-    def test_campany_filtr_new_select_all_current_dir(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_APPLY_ALL, timeout=10
-        )
-
-
-    def test_campany_filtr_new_status_dir(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_STATUS_CAMPANY_LAUNCHED, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_STATUS_CAMPANY_STOPED, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_STATUS_SHOW_DELETED, timeout=10
-        )
-
-    def test_campany_filtr_new_status_moder_dir(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR_STATUS_MODER, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_STATUS_MODER_ON_CHECK, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_STATUS_MODER_DENIED, timeout=10
-        )
-
-    def test_campany_filtr_new_object_ads_dir(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_OBJ_ADV, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_STATUS_OBJ_ADV_MOBILE, timeout=10
-        )
-
-    def test_campany_filtr_new_translations_dir(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_TRANSLATION, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_TRANSLATION_ON, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_TRANSLATION_OFF, timeout=10
-        )
-
-    def test_campany_filtr_new_campaign_effectiveness_dir(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
-        )
-
-
-    def test_campany_filtr_cancellation(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_CANCEL, timeout=10
-        )
-
-
-    def test_campany_filtr_do(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_APPROVE, timeout=10
-        )
-
-
-    def test_campany_filtr_save_open(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_APPROVE, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_OPEN, timeout=10
-        )
-    
-
-    def test_campany_filtr_save_close(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_APPROVE, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_OPEN, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_CLOSE, timeout=10
-        )
-
-    def test_campany_filtr_make_save(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_APPROVE, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_OPEN, timeout=10
-        )
         campany_page.input(
-            CampanyPageLocators.FILTR_SAVE_INPUT,
-            "testinput",
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_CLOSE, timeout=10
+            CampanyPageLocators.INPUT_DESCRIPTION_APP,
+            "Тестовое описаниеи ограничениефффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффФФФФФФ"
         )
 
-    def test_campany_filtr_make_save_err_already_save(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_APPROVE, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_OPEN, timeout=10
-        )
         campany_page.input(
-            CampanyPageLocators.FILTR_SAVE_INPUT,
-            "testinput",
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_CLOSE, timeout=10
+            CampanyPageLocators.INPUT_DESCRIPTION_APP,
+            "Тестовое описание"
         )
 
-    def test_campany_filtr_make_save_err_confused_field(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
         campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
+            CampanyPageLocators.INPUT_END_DATA_CAMPANY
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
+            CampanyPageLocators.INPUT_SELECT_END_DATA
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
+            CampanyPageLocators.DROPDOWN_MAIN_MOVEMENT
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
+            CampanyPageLocators.SWITCH_OPTIMIZATION
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_APPROVE, timeout=10
+            CampanyPageLocators.SWITCH_OPTIMIZATION
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_OPEN, timeout=10
+            CampanyPageLocators.DROPDOWN_STRATEGY
         )
+
         campany_page.input(
-            CampanyPageLocators.FILTR_SAVE_INPUT,
-            "",
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_CLOSE, timeout=10
+            CampanyPageLocators.INPUT_TARGETING,
+            "90"
         )
 
-    def test_campany_filtr_make_save_err_too_many_symbols(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_APPROVE, timeout=10
-        )
-        
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_OPEN, timeout=10
-        )
         campany_page.input(
-            CampanyPageLocators.FILTR_SAVE_INPUT,
-            "testinput999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999444444444444444444444444444444444444444444444444444",
-        )
-        campany_page.click(
-            CampanyPageLocators.FILTR_SAVE_CLOSE, timeout=10
+            CampanyPageLocators.INPUT_TARGETING,
+            "99 999 999 999 999"
         )
 
-    def test_campany_filtr_remove(self, credentials):
-        campany_page = CampanyPage(self.driver)
-        campany_page.open_page()
-        campany_page.click(
-            CampanyPageLocators.OPEN_FILTR, timeout=10
+        campany_page.input(
+            CampanyPageLocators.INPUT_TARGETING,
+            "101"
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_OPEN_EFFICIENCY, timeout=10
+            CampanyPageLocators.DROPDOWN_TIME_STRATEGY
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_GOOD, timeout=10
+            CampanyPageLocators.BUTTON_CONTINUE
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_EFFICIENCY_MAKE_BETTER, timeout=10
+            CampanyPageLocators.BUTTON_SELECT_RUSSIA
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_APPROVE, timeout=10
+            CampanyPageLocators.SWITCH_AUDIENCE
         )
+
         campany_page.click(
-            CampanyPageLocators.FILTR_REMOVE, timeout=10
+            CampanyPageLocators.BUTTON_SELECT_INTERESTS
         )
-       '''
+
+        campany_page.click(
+            CampanyPageLocators.INPUT_INTERESTS,
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_SELECT_INTERESTS_AUTO
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_CONTINUE
+        )
+
+        campany_page.input(
+            CampanyPageLocators.INPUT_DESCRIPTION_ADV,
+            "Перспективная команда из Москвы"
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_OPEN_AI
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_SELECT_IMAGE_1
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_SELECT_IMAGE_2
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_ADD_IMAGE
+        )
+
+        video_element = WebDriverWait(self.driver, 15).until(
+            EC.presence_of_element_located(
+                CampanyPageLocators.BUTTON_NEW_VIDIO
+            )
+        )
+
+        WebDriverWait(self.driver, 15).until(
+            EC.visibility_of(video_element)
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_PUBLISH
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_CHECKBOX
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_OPEN_OPTIONS
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_OPEN_OPTIONS_DELETE
+        )
+
+
+
