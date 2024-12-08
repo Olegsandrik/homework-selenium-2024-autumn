@@ -1,6 +1,6 @@
 from ui.pages.base_page import BasePage
-from  ui.locators.hq_base_locators import HqBaseLocators
-from  ui.url.urls import Urls
+from ui.locators.hq_base_locators import HqBaseLocators
+from ui.url.urls import Urls
 
 class HqBasePage(BasePage):
     url = Urls.hq_base_page

@@ -22,10 +22,12 @@ class LoginPage(BasePage):
             30
         )
 
+        time.sleep(2)
         self.click(self.locators.SUBMIT, 15)
 
         self.click(self.locators.CHOOSE_AUTH_METHOD, 15)
         self.click(self.locators.USE_PASSWORD_AUTH, 10)
+
 
         self.input(self.locators.INPUT_PASSWORD, credentials.get('password', ''), 30)
         self.click(self.locators.SUBMIT, 10)
