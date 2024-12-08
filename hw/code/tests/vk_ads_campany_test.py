@@ -4,7 +4,7 @@ import time
 
 import pytest
 from _pytest.fixtures import FixtureRequest
-from selenium.common import TimeoutException
+from selenium.common import TimeoutException, NoSuchElementException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -43,7 +43,6 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.CHANGE_NAME_CAMPANY
         )
-        
         campany_page.click(
             CampanyPageLocators.CHOOSE_SOCIETY
         )
@@ -172,6 +171,13 @@ class TestCampany(BaseCase):
             CampanyPageLocators.BUTTON_PUBLISH
         )
 
+        try:
+            WebDriverWait(self.driver, 10).until(
+                EC.presence_of_element_located((By.XPATH, CampanyPageLocators.CREATED_CAMPANY))
+            )
+        except NoSuchElementException:
+            pytest.fail("Кампания не найдена.")
+
         campany_page.click(
             CampanyPageLocators.BUTTON_CHECKBOX
         )
@@ -183,6 +189,4 @@ class TestCampany(BaseCase):
         campany_page.click(
             CampanyPageLocators.BUTTON_OPEN_OPTIONS_DELETE
         )
-
-
 
