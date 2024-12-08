@@ -1,3 +1,6 @@
+from datetime import datetime
+
+import now
 from selenium.webdriver.common.by import By
 
 
@@ -5,7 +8,8 @@ class CampanyPageLocators:
     OPEN_CREATION_NEW_CAMPANY = (By.XPATH, "//span[text()='Создать']")
     CHOOSE_SOCIETY = (By.XPATH, "//span[text()='Сообщество и профиль']")
     DROPDOWN_ADVS_OBJECT = (By.XPATH, "//input[@data-testid='vk-owner-selector']")
-    CHANGE_NAME_CAMPANY = (By.XPATH, "//h2[text()='Кампания 2024-12-08']")
+    CHANGE_NAME_CAMPANY = (By.XPATH, "//div[contains(@class, 'EditableTitle_container')]")
+    INPUT_NEW_CAMPANY_NAME = (By.XPATH, "//div[contains(@class, 'EditableTitle_inputContainer')]")
     INPUT_NEW_NAME = (By.CLASS_NAME, 'EditableTitle_inputContainer')
     INPUT_DESCRIPTION_APP = (By.XPATH, "//textarea[@placeholder='Опишите ваше предложение']")
     INPUT_END_DATA_CAMPANY = (By.XPATH, "//span[@data-testid='end-date']")
@@ -32,4 +36,4 @@ class CampanyPageLocators:
     BUTTON_CHECKBOX = (By.XPATH, "//input[@type='checkbox' and contains(@class, 'vkuiCheckbox__input')]")
     BUTTON_OPEN_OPTIONS = (By.XPATH, "//span[contains(@class, 'vkuiButton__content') and text()='Действия']")
     BUTTON_OPEN_OPTIONS_DELETE = (By.XPATH, "//span[text()='Удалить']")
-    CREATED_CAMPANY = (By.XPATH, "//button[text()='Кампания 2024-12-08']")
+    CREATED_CAMPANY = (By.XPATH, "//button[text()='Тестовое название']")

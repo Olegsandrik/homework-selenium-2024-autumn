@@ -37,22 +37,33 @@ class TestCampany(BaseCase):
         campany_page.open_page()
 
         campany_page.click(
-            CampanyPageLocators.OPEN_CREATION_NEW_CAMPANY
+            CampanyPageLocators.OPEN_CREATION_NEW_CAMPANY, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.CHANGE_NAME_CAMPANY
+            CampanyPageLocators.CHANGE_NAME_CAMPANY, timeout=10
         )
-        campany_page.click(
-            CampanyPageLocators.CHOOSE_SOCIETY
+
+        campany_page.input(
+            CampanyPageLocators.INPUT_NEW_CAMPANY_NAME,
+            "Тестовое название ограничениефффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффФФФФФФ"
+        )
+
+        campany_page.input(
+            CampanyPageLocators.INPUT_NEW_CAMPANY_NAME,
+            "Тестовое название"
         )
 
         campany_page.click(
-            CampanyPageLocators.DROPDOWN_ADVS_OBJECT
+            CampanyPageLocators.CHOOSE_SOCIETY, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.INPUT_DESCRIPTION_APP
+            CampanyPageLocators.DROPDOWN_ADVS_OBJECT, timeout=10
+        )
+
+        campany_page.click(
+            CampanyPageLocators.INPUT_DESCRIPTION_APP, timeout=10
         )
 
         campany_page.input(
@@ -66,27 +77,27 @@ class TestCampany(BaseCase):
         )
 
         campany_page.click(
-            CampanyPageLocators.INPUT_END_DATA_CAMPANY
+            CampanyPageLocators.INPUT_END_DATA_CAMPANY, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.INPUT_SELECT_END_DATA
+            CampanyPageLocators.INPUT_SELECT_END_DATA, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.DROPDOWN_MAIN_MOVEMENT
+            CampanyPageLocators.DROPDOWN_MAIN_MOVEMENT, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.SWITCH_OPTIMIZATION
+            CampanyPageLocators.SWITCH_OPTIMIZATION, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.SWITCH_OPTIMIZATION
+            CampanyPageLocators.SWITCH_OPTIMIZATION, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.DROPDOWN_STRATEGY
+            CampanyPageLocators.DROPDOWN_STRATEGY, timeout=10
         )
 
         campany_page.input(
@@ -105,35 +116,35 @@ class TestCampany(BaseCase):
         )
 
         campany_page.click(
-            CampanyPageLocators.DROPDOWN_TIME_STRATEGY
+            CampanyPageLocators.DROPDOWN_TIME_STRATEGY, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_CONTINUE
+            CampanyPageLocators.BUTTON_CONTINUE, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_SELECT_RUSSIA
+            CampanyPageLocators.BUTTON_SELECT_RUSSIA, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.SWITCH_AUDIENCE
+            CampanyPageLocators.SWITCH_AUDIENCE, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_SELECT_INTERESTS
+            CampanyPageLocators.BUTTON_SELECT_INTERESTS, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.INPUT_INTERESTS,
+            CampanyPageLocators.INPUT_INTERESTS, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_SELECT_INTERESTS_AUTO
+            CampanyPageLocators.BUTTON_SELECT_INTERESTS_AUTO, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_CONTINUE
+            CampanyPageLocators.BUTTON_CONTINUE, timeout=10
         )
 
         campany_page.input(
@@ -142,19 +153,19 @@ class TestCampany(BaseCase):
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_OPEN_AI
+            CampanyPageLocators.BUTTON_OPEN_AI, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_SELECT_IMAGE_1
+            CampanyPageLocators.BUTTON_SELECT_IMAGE_1, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_SELECT_IMAGE_2
+            CampanyPageLocators.BUTTON_SELECT_IMAGE_2, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_ADD_IMAGE
+            CampanyPageLocators.BUTTON_ADD_IMAGE, timeout=10
         )
 
         video_element = WebDriverWait(self.driver, 15).until(
@@ -168,7 +179,7 @@ class TestCampany(BaseCase):
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_PUBLISH
+            CampanyPageLocators.BUTTON_PUBLISH, timeout=10
         )
 
         try:
@@ -179,14 +190,14 @@ class TestCampany(BaseCase):
             pytest.fail("Кампания не найдена.")
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_CHECKBOX
+            CampanyPageLocators.BUTTON_CHECKBOX, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_OPEN_OPTIONS
+            CampanyPageLocators.BUTTON_OPEN_OPTIONS, timeout=10
         )
 
         campany_page.click(
-            CampanyPageLocators.BUTTON_OPEN_OPTIONS_DELETE
+            CampanyPageLocators.BUTTON_OPEN_OPTIONS_DELETE, timeout=10
         )
 
