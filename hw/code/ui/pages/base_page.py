@@ -17,7 +17,7 @@ class BasePage(object):
         self.driver = driver
         self.is_opened()
         
-    def is_opened(self, timeout=30):
+    def is_opened(self, timeout=10):
         started = time.time()
         while time.time() - started < timeout:
             if self.driver.current_url.split('?')[0] == self.url:
@@ -42,4 +42,7 @@ class BasePage(object):
     def input(self, input_field, data, timeout=DEFAULT_TIMER_LENGTH):
         elem = self.find(input_field, timeout)
         elem.clear()
-        elem.send_keys(data)
+        elem.send_keys(data)    
+
+    def is_on_page(self, text):
+        return text in self.driver.page_source
