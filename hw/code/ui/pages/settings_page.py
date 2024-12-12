@@ -90,7 +90,6 @@ class MainSettingsPage(SettingsPage):
     
     def change_account_name(self, new_account_name):
         self.input_account_name(new_account_name)
-        time.sleep(1)
         self.save_changes()
     
     def get_account_name(self):

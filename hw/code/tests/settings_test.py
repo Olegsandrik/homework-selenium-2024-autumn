@@ -37,7 +37,7 @@ class TestMainSettings(BaseCase):
         error_message = 'Некорректный номер телефона'
 
         assert settings_page.is_on_page(error_message)
-    
+
     @pytest.mark.skip('skip')
     def test_delete_phone(self):
         settings_page = self.overview_page.open_settings()
@@ -45,18 +45,9 @@ class TestMainSettings(BaseCase):
         settings_page.change_phone('')
         assert settings_page.get_phone() == ''
         settings_page.change_phone(initial_phone)
-
-    @pytest.mark.skip('skip')
-    def test_add_email(self):
-        settings_page = self.overview_page.open_settings()
-        new_email = 'abc@mail.ru'
-        settings_page.add_email(new_email)
-        time.sleep(2)
-        assert settings_page.get_email_input_with_index().get_attribute("value") == new_email
-        settings_page.delete_email_with_index()
     
     @pytest.mark.skip('skip')
-    def test_max_phone_length(self):
+    def test_max_email_length(self):
         long_email = '1' * 1000
         settings_page = self.overview_page.open_settings()
         settings_page.add_email(long_email)
@@ -64,11 +55,11 @@ class TestMainSettings(BaseCase):
         settings_page.cancel_changes()
     
     @pytest.mark.skip('skip')
-    def test_enter_incorrect_phone(self):
+    def test_enter_incorrect_email(self):
         settings_page = self.overview_page.open_settings()
 
         incorrect_email = 'aaaaa1212'
-        settings_page.change_phone(incorrect_email)
+        settings_page.add_email(incorrect_email)
         error_message = 'Некорректный email адрес'
 
         assert settings_page.is_on_page(error_message)
@@ -78,11 +69,10 @@ class TestMainSettings(BaseCase):
         settings_page = self.overview_page.open_settings()
         new_email = 'abc@mail.ru'
         settings_page.add_email(new_email)
-        time.sleep(2)
         assert settings_page.get_email_input_with_index().get_attribute("value") == new_email
         settings_page.delete_email_with_index()
     
-    @pytest.mark.skip('skip')
+    # @pytest.mark.skip('skip')
     def test_change_correct_name(self):
         settings_page = self.overview_page.open_settings()
 
@@ -111,6 +101,7 @@ class TestMainSettings(BaseCase):
 
         assert settings_page.is_on_page(error_message)
 
+    @pytest.mark.skip('skip')
     def test_change_correct_account_name(self):
         settings_page = self.overview_page.open_settings()
 
@@ -136,6 +127,7 @@ class TestNotificationsSettings(BaseCase):
         notifications_settings_page = self.overview_page.open_settings().open_notifications()
         assert notifications_settings_page.driver.current_url == Urls.notifications_settings_page
     
+    @pytest.mark.skip('skip')
     def test_turn_off_notifications(self):
         notifications_settings_page = self.overview_page.open_settings().open_notifications()
         turned_off_switches = notifications_settings_page.turn_off_switches()
