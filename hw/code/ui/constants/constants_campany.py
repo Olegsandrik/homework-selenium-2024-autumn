@@ -10,3 +10,5 @@ class CampanyPageConstants:
     INPUT_EDIT_CAMPANY_ADD_NEW_BUDGET = "121"
     INPUT_EDIT_CAMPANY_ADD_NEW_CITY = "Санкт-Петербург"
     INPUT_DESCRIPTION_ADV_EDIT = "Тестовое описание после редактирования"
+    ERR_NO_SUCH_CAMPANY = "Созданная кампания не найдена."
+    ERR_NO_CHANGES = "Изменения не были сохранены"

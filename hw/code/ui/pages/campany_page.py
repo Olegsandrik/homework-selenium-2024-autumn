@@ -199,7 +199,7 @@ class CampanyPage(BasePage):
             )
 
         except NoSuchElementException:
-            pytest.fail("Созданная кампания не найдена.")
+            pytest.fail(CampanyPageConstants.ERR_NO_SUCH_CAMPANY)
 
         self.click(
             CampanyPageLocators.BUTTON_CHECKBOX, timeout=10
@@ -325,4 +325,4 @@ class CampanyPage(BasePage):
             )
 
         except NoSuchElementException:
-            pytest.fail("Изменения не были сохранены")
+            pytest.fail(CampanyPageConstants.ERR_NO_CHANGES)
