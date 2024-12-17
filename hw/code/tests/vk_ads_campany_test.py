@@ -186,6 +186,10 @@ class TestCampany(BaseCase):
             CampanyPageLocators.BUTTON_PUBLISH, timeout=10
         )
 
+        campany_page.click(
+            CampanyPageLocators.BUTTON_PUBLISH_SUBMIT, timeout=10
+        )
+
         try:
             WebDriverWait(self.driver, 40).until(
                 EC.presence_of_element_located(CampanyPageLocators.CREATED_CAMPANY)
@@ -194,13 +198,15 @@ class TestCampany(BaseCase):
                 EC.presence_of_element_located(CampanyPageLocators.DIV_CREATE_CAMPANY_NEW_BUDGET)
             )
 
-            edit_element = WebDriverWait(self.driver, 10).until(
+            WebDriverWait(self.driver, 10).until(
                 EC.visibility_of_element_located(
                     CampanyPageLocators.BUTTON_EDIT_CAMPANY
                 )
             )
 
-            edit_element.click()
+            campany_page.click(
+                CampanyPageLocators.BUTTON_EDIT_CAMPANY, timeout=10
+            )
 
             WebDriverWait(self.driver, 40).until(
                 EC.presence_of_element_located(CampanyPageLocators.DIV_CREATE_CAMPANY_NEW_ACTION)
@@ -218,6 +224,10 @@ class TestCampany(BaseCase):
 
         WebDriverWait(self.driver, 40).until(
             EC.element_to_be_clickable(CampanyPageLocators.BUTTON_OPEN_OPTIONS)
+        )
+
+        campany_page.click(
+            CampanyPageLocators.BUTTON_OPEN_OPTIONS, timeout=10
         )
 
         campany_page.click(
