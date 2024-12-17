@@ -8,6 +8,7 @@ from ui.pages.base_page import BasePage
 from ui.url.campany_urls import CampanyPageUrls
 from selenium.webdriver.support import expected_conditions as EC
 from ui.locators.campany_locators import CampanyPageLocators
+from ui.constants.constants_campany import CampanyPageConstants
 
 
 class CampanyPage(BasePage):
@@ -41,12 +42,12 @@ class CampanyPage(BasePage):
 
         self.input(
             CampanyPageLocators.INPUT_DESCRIPTION_APP,
-            "Тестовое описаниеи ограничениефффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффффФФФФФФ"
+            CampanyPageConstants.INPUT_DESCRIPTION_APP_MAX
         )
 
         self.input(
             CampanyPageLocators.INPUT_DESCRIPTION_APP,
-            "Тестовое описание"
+            CampanyPageConstants.INPUT_DESCRIPTION_APP
         )
 
         self.click(
@@ -75,17 +76,17 @@ class CampanyPage(BasePage):
 
         self.input(
             CampanyPageLocators.INPUT_TARGETING,
-            "90"
+            CampanyPageConstants.INPUT_TARGETING_MIN
         )
 
         self.input(
             CampanyPageLocators.INPUT_TARGETING,
-            "99 999 999 999 999"
+            CampanyPageConstants.INPUT_TARGETING_MAX
         )
 
         self.input(
             CampanyPageLocators.INPUT_TARGETING,
-            "101"
+            CampanyPageConstants.INPUT_TARGETING
         )
 
         self.click(
@@ -146,12 +147,12 @@ class CampanyPage(BasePage):
 
         self.input(
             CampanyPageLocators.INPUT_TITLE_ADV,
-            "Тест на ограничениеееееееееееееееееееееееееееееееееееееееееееееЕЕЕЕЕЕЕЕЕЕЕЕЕЕ"
+            CampanyPageConstants.INPUT_TITLE_ADV_MAX
         )
 
         self.input(
             CampanyPageLocators.INPUT_TITLE_ADV,
-            "ВК PRODIGY"
+            CampanyPageConstants.INPUT_TITLE_ADV
         )
 
         self.click(
@@ -160,7 +161,7 @@ class CampanyPage(BasePage):
 
         self.input(
             CampanyPageLocators.INPUT_DESCRIPTION_ADV,
-            "Перспективная команда из Москвы"
+            CampanyPageConstants.INPUT_DESCRIPTION_ADV
         )
 
         self.click(
@@ -247,7 +248,7 @@ class CampanyPage(BasePage):
 
         self.input(
             CampanyPageLocators.INPUT_EDIT_CAMPANY_ADD_NEW_BUDGET,
-            "121"
+            CampanyPageConstants.INPUT_EDIT_CAMPANY_ADD_NEW_BUDGET
         )
 
         self.click(
@@ -260,7 +261,7 @@ class CampanyPage(BasePage):
 
         self.input(
             CampanyPageLocators.INPUT_EDIT_CAMPANY_ADD_NEW_CITY,
-            "Санкт-Петербург"
+            CampanyPageConstants.INPUT_EDIT_CAMPANY_ADD_NEW_CITY
         )
 
         self.click(
@@ -277,7 +278,7 @@ class CampanyPage(BasePage):
 
         self.input(
             CampanyPageLocators.INPUT_DESCRIPTION_ADV,
-            "Тестовое описание после редактирования"
+            CampanyPageConstants.INPUT_DESCRIPTION_ADV_EDIT
         )
 
         self.click(
