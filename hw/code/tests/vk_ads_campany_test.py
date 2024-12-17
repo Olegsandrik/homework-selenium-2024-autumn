@@ -27,7 +27,6 @@ def credentials():
     }
 
 
-@pytest.mark.skip('skip')
 class TestCampany(BaseCase):
 
     def test_open_campany_page(self, credentials):

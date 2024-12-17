@@ -7,5 +7,4 @@ class LoginPageLocators:
     USE_PASSWORD_AUTH = (By.XPATH, "//div[@data-test-id='verificationMethod_password']")
     INPUT_PASSWORD = (By.XPATH, "//input[@type='password']")
     ORGANIZATION_ITEM = (By.XPATH, "//div[contains(@data-test-id, 'organization-item')]")
-    COUNTIUE_LOGIN = (By.XPATH, "//div[@class='vkuiSimpleCell vkuiSimpleCell--sizeY-none vkuiTappable vkuiTappable--sizeX-none vkuiTappable--hasPointer-none vkuiClickable__host vkuiClickable__realClickable vkui-focus-visible vkuiRootComponent']")
-    
+    COUNTIUE_LOGIN = (By.XPATH, "//div[@data-test-id='organization-item-4410346']")

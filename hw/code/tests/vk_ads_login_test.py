@@ -17,11 +17,11 @@ load_dotenv()
 
 load_dotenv()
 
-@pytest.mark.skip('skip')
+
 class TestLogin(BaseCase):
-    def test_login(self):
+    def test_login_driver(self):
         print(self.driver.current_url)
 
-    def _test_login(self, credentials):
+    def test_login(self, credentials):
         login_page = LoginPage(self.driver)
         login_page.login(credentials)
