@@ -36,10 +36,12 @@ class TestCampany(BaseCase):
     def test_campany_create_new_campany(self, credentials):
         campany_page = CampanyPage(self.driver)
         campany_page.open_page()
-        campany_page.create_campany()
+        result = campany_page.create_campany()
+        assert result == "OK", "Err: no such campany"
 
     def test_campany_edit_campany(self, credentials):
         campany_page = CampanyPage(self.driver)
         campany_page.open_page()
-        campany_page.edit_campany()
+        result = campany_page.edit_campany()
+        assert result == "OK", "Err: no changes in campany"
 

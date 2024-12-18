@@ -1,7 +1,7 @@
 import time
 
 import pytest
-from selenium.common import NoSuchElementException
+from selenium.common import NoSuchElementException, TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from ui.pages.base_page import BasePage
@@ -198,8 +198,8 @@ class CampanyPage(BasePage):
                 CampanyPageLocators.BUTTON_CREATE_CAMPANY_CLOSE_EDIT, timeout=10
             )
 
-        except NoSuchElementException:
-            pytest.fail(CampanyPageConstants.ERR_NO_SUCH_CAMPANY)
+        except (NoSuchElementException, TimeoutException):
+            return CampanyPageConstants.ERR
 
         self.click(
             CampanyPageLocators.BUTTON_CHECKBOX, timeout=10
@@ -226,6 +226,8 @@ class CampanyPage(BasePage):
         self.click(
             CampanyPageLocators.BUTTON_OPEN_OPTIONS_DELETE, timeout=10
         )
+
+        return CampanyPageConstants.STATUS_OK
 
     def edit_campany(self):
         WebDriverWait(self.driver, 10).until(
@@ -324,5 +326,7 @@ class CampanyPage(BasePage):
                 EC.presence_of_element_located(CampanyPageLocators.DIV_EDIT_BUDGET_NEW_DESCR)
             )
 
-        except NoSuchElementException:
-            pytest.fail(CampanyPageConstants.ERR_NO_CHANGES)
+        except (NoSuchElementException, TimeoutException):
+            return CampanyPageConstants.ERR
+
+        return CampanyPageConstants.STATUS_OK
