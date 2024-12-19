@@ -26,7 +26,7 @@ def credentials():
         'password': os.getenv('PASSWORD')
     }
 
-
+ 
 class TestCampany(BaseCase):
 
     def test_open_campany_page(self, credentials):

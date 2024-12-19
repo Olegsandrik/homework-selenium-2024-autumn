@@ -6,6 +6,7 @@ from ui.url.urls import Urls
 from tests.base_case import BaseCase
 
 
+ 
 class TestMainSettings(BaseCase):
 
     def test_change_correct_phone(self):
@@ -121,6 +122,7 @@ class TestMainSettings(BaseCase):
         settings_page.cancel_changes()
 
 
+ 
 class TestNotificationsSettings(BaseCase):
 
     def test_open_notifications(self):
@@ -137,6 +139,7 @@ class TestNotificationsSettings(BaseCase):
 
 
 
+ 
 class TestAccessSettings(BaseCase):
     def test_open_access_settings(self):
         settings_page = self.overview_page.open_settings()

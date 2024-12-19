@@ -17,8 +17,8 @@ class SettingsPage(HqBasePage):
     url = Urls.setting_page
     base_settings_locators = SettingsLocators()
 
-    def __init__(self, driver, overview_page_class):
-        super().__init__(driver, overview_page_class=overview_page_class, settings_page_class=MainSettingsPage)
+    def __init__(self, driver, overview_page_class, leadforms_page_class):
+        super().__init__(driver, overview_page_class=overview_page_class, settings_page_class=MainSettingsPage, leadforms_page_class=leadforms_page_class)
 
     def cancel_changes(self):
         cancel_btn = self.find(self.base_settings_locators.CANCEL_BUTTON)

@@ -2,6 +2,7 @@ import time
 
 from ui.pages.settings_page import MainSettingsPage
 from ui.pages.overview_page import OverviewPage
+from ui.pages.leadforms_page import LeadformsPage
 from ui.pages.base_page import BasePage
 from ui.locators.login_locators import LoginPageLocators
 from ui.url.urls import Urls
@@ -33,4 +34,4 @@ class LoginPage(BasePage):
         self.click(self.locators.SUBMIT, 10)
         self.click(self.locators.ORGANIZATION_ITEM, 15)
 
-        return OverviewPage(self.driver, MainSettingsPage)
+        return OverviewPage(self.driver, MainSettingsPage, LeadformsPage)
