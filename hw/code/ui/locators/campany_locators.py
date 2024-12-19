@@ -1,6 +1,6 @@
 from datetime import datetime
 
-import now
+# import now
 from selenium.webdriver.common.by import By
 
 
